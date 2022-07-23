@@ -21,7 +21,8 @@ class SystemNetworkProxyMacos extends SystemNetworkProxyPlatform {
       var results = await Process.run('bash', [
         '-c',
         concatCommands([
-          'networksetup -getwebproxy wi-fi',
+          //'networksetup -getwebproxy wi-fi',
+          'networksetup -getsocksfirewallproxy wi-fi',
         ])
       ]);
       print(
@@ -46,7 +47,8 @@ class SystemNetworkProxyMacos extends SystemNetworkProxyPlatform {
       var results = await Process.run('bash', [
         '-c',
         concatCommands([
-          'networksetup -setwebproxystate wi-fi $proxyMode',
+          'networksetup -setsocksfirewallproxystate wi-fi $proxyMode',
+          //'networksetup -setwebproxystate wi-fi $proxyMode',
           // 'networksetup -setsecurewebproxystate wi-fi $proxyMode',
         ])
       ]);
@@ -66,7 +68,8 @@ class SystemNetworkProxyMacos extends SystemNetworkProxyPlatform {
       var results = await Process.run('bash', [
         '-c',
         concatCommands([
-          'networksetup -getwebproxy wi-fi',
+          'networksetup -getsocksfirewallproxy wi-fi',
+          //'networksetup -getwebproxy wi-fi',
         ])
       ]);
       print(
@@ -103,7 +106,8 @@ class SystemNetworkProxyMacos extends SystemNetworkProxyPlatform {
       var results = await Process.run('bash', [
         '-c',
         concatCommands([
-          'networksetup -setwebproxy wi-fi $host $port',
+          'networksetup -setsocksfirewallproxy wi-fi $host $port',
+          //'networksetup -setwebproxy wi-fi $host $port',
           // 'networksetup -setsecurewebproxy wi-fi $host $port',
         ])
       ]);
