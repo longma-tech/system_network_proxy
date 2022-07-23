@@ -14,7 +14,11 @@ dependencies:
   system_network_proxy_platform_interface: ^1.0.0
   system_network_proxy_web: ^1.0.0
   system_network_proxy_linux: ^1.0.0
-  system_network_proxy_macos: ^1.0.0
+  #system_network_proxy_macos: ^1.0.0
+  system_network_proxy_macos:
+    git: 
+      url: https://github.com/longma-tech/system_network_proxy
+      path: system_network_proxy_macos
   system_network_proxy_windows: ^1.0.0
 
 dev_dependencies:
